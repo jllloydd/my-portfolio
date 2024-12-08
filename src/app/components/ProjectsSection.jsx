@@ -12,10 +12,12 @@ import ucgc2 from "../../../public/projectscreenshots/ucgc2.png";
 import ucgc3 from "../../../public/projectscreenshots/ucgc3.png";
 import ucgc4 from "../../../public/projectscreenshots/ucgc4.png";
 import peng from "../../../public/projectscreenshots/peng.png";
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 
   
   export default function ProjectsSection() {
+
+
     const projects = [
         {
           id: 1,
@@ -24,7 +26,7 @@ import React, {useState} from "react";
           techStack: ["bootstrap", "html", "scss", "css", "js"],
           images: [tt1],
           link: "https://jllloydd.github.io/BLIP-Activities/",
-          github: "https://github.com/KyleGhats/portfolio-v1",
+          github: "https://github.com/jllloydd/BLIP-Activities",
         },
         {
             id: 2,
@@ -87,7 +89,7 @@ import React, {useState} from "react";
       <section className="space-y-14 scroll-mt-[4rem]" id="projects">
         <div className="flex justify-center items-center space-x-4">
           <button onClick={handlePreviousProject}>&lt;</button>
-          <div className="border p-4 rounded-lg shadow-lg">
+          <div className="border p-4 rounded-lg shadow-lg" id="projectCard">
             <h3 className="text-xl font-bold">{activeProject.name}</h3>
             <p>{activeProject.description}</p>
             <Image
