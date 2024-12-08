@@ -123,12 +123,12 @@ export default function Greeting() {
 
         {!isProjectsSection && (
           <div className="space-y-7">
-            <div className=" tracking-[0.2em]">kylegatudan@gmail.com</div>
+            <div className=" tracking-[0.2em]">jlloydgdg@gmail.com</div>
             <div>
               <Link
                 href="resume/Resume(Gatudan).pdf"
                 target="_blank"
-                className="px-4 py-2 border-[#78EF9A] border rounded-md md:inline-block hidden"
+                className="px-4 py-2 border-[#012496] border rounded-md md:inline-block hidden"
               >
                 View Resume
               </Link>
