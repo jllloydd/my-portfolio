@@ -116,7 +116,7 @@ export default function ProjectsSection() {
         <button
           onClick={handlePreviousProject}
           type="button"
-          className="text-greenthingy focus:ring-4 focus:outline-none font-medium rounded-md text-sm p-2.5 text-center inline-flex items-center me-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+          className="text-greenthingy focus:outline-none font-medium rounded-md text-sm p-2.5 text-center inline-flex items-center me-2"
         >
           <svg
             className="w-4 h-4 transform rotate-180"
@@ -193,7 +193,7 @@ export default function ProjectsSection() {
         <button
           onClick={handleNextProject}
           type="button"
-          className="text-greenthingy focus:ring-4 focus:outline-none font-medium rounded-md text-sm p-2.5 text-center inline-flex items-center me-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+          className="text-greenthingy focus:outline-none font-medium rounded-md text-sm p-2.5 text-center inline-flex items-center me-2"
         >
           <svg
             className="w-4 h-4"

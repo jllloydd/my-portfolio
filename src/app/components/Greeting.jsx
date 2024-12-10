@@ -60,6 +60,13 @@ export default function Greeting() {
     };
   }, [navItems]);
 
+  const handleNavItemClick = (id) => {
+    const sectionElement = document.getElementById(id);
+    if (sectionElement) {
+      sectionElement.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <aside className="md:fixed left-0 top-0 md:h-screen max-md:mb-20 z-30 md:flex items-center justify-center xl:pl-24 lg:pl-20 md:pl-16 pl-10 max-xl:w-96 max-md:w-full">
       <div className="space-y-12">
@@ -118,9 +125,9 @@ export default function Greeting() {
                   item.id === activeSection ? "text-[#01efac] scale-110" : ""
                 }`}
               >
-                <Link
-                  href={`#${item.id}`}
-                  className={`flex items-center gap-3 text-[#01efac] ${
+                <a
+                  onClick={() => handleNavItemClick(item.id)}
+                  className={`flex items-center gap-3 text-[#01efac] cursor-pointer ${
                     item.id === activeSection ? "text-[#01efac]" : ""
                   }`}
                 >
@@ -133,7 +140,7 @@ export default function Greeting() {
                     }`}
                   ></span>
                   <span>{item.text}</span>
-                </Link>
+                </a>
               </li>
             ))}
           </ul>
