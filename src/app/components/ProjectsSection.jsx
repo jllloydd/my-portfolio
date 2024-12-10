@@ -11,7 +11,7 @@ import ucgc2 from "../../../public/projectscreenshots/ucgc2.png";
 import ucgc3 from "../../../public/projectscreenshots/ucgc3.png";
 import ucgc4 from "../../../public/projectscreenshots/ucgc4.png";
 import peng from "../../../public/projectscreenshots/peng.png";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 export default function ProjectsSection() {
   const projects = [
@@ -45,7 +45,7 @@ export default function ProjectsSection() {
       github: "https://github.com/jllloydd/STEADY",
     },
     {
-      id: 3,
+      id: 4,
       name: "UCGC",
       description:
         "A web application geared towards communication between University of the Cordilleras' students and guidance counselors. It features chat, booking,, real-time email notification, and authentication systems, aiming to digitize the counseling process.",
@@ -54,7 +54,7 @@ export default function ProjectsSection() {
       github: "https://github.com/jllloydd/UCGC-Laravel-10",
     },
     {
-      id: 4,
+      id: 5,
       name: "Penguin Animation",
       description:
         "A simple animation of a penguin using HTML, CSS, and JavaScript, made as an activity for my Web Development class.",
@@ -66,12 +66,33 @@ export default function ProjectsSection() {
   ];
 
   const [activeProjectIndex, setActiveProjectIndex] = useState(0);
+  const [activeImageIndex, setActiveImageIndex] = useState(0);
   const [animationClass, setAnimationClass] = useState("");
+  const [imageAnimationClass, setImageAnimationClass] = useState("");
+
+  useEffect(() => {
+    const imageCount = projects[activeProjectIndex].images.length;
+    if (imageCount > 1) {
+      const interval = setInterval(() => {
+        setImageAnimationClass("image-slide-out-left");
+        setTimeout(() => {
+          setActiveImageIndex((prevIndex) => (prevIndex + 1) % imageCount);
+          setImageAnimationClass("image-slide-in-right");
+        }, 700); // Match the duration of the CSS animation
+      }, 4000); // Adjusted interval to account for animation duration
+      return () => clearInterval(interval);
+    } else {
+      // Reset animation class and image index if there's only one image
+      setImageAnimationClass("");
+      setActiveImageIndex(0);
+    }
+  }, [activeProjectIndex, activeImageIndex]);
 
   const handleNextProject = () => {
     setAnimationClass("slide-out-left");
     setTimeout(() => {
       setActiveProjectIndex((prevIndex) => (prevIndex + 1) % projects.length);
+      setActiveImageIndex(0); // Reset image index for new project
       setAnimationClass("slide-in-right");
     }, 300);
   };
@@ -82,6 +103,7 @@ export default function ProjectsSection() {
       setActiveProjectIndex((prevIndex) =>
         prevIndex === 0 ? projects.length - 1 : prevIndex - 1
       );
+      setActiveImageIndex(0); // Reset image index for new project
       setAnimationClass("slide-in-left");
     }, 300);
   };
@@ -98,13 +120,15 @@ export default function ProjectsSection() {
         >
           <h3 className="text-2xl font-bold">{activeProject.name}</h3>
           <p className="text-lg text-justify">{activeProject.description}</p>
-          <Image
-            src={activeProject.images[0]} // Main image
-            width={activeProject.name === "STEADY" ? 200 : 600}
-            height={activeProject.name === "STEADY" ? 400 : 400}
-            alt={activeProject.name}
-            className="rounded-lg"
-          />
+          <div className="rounded-lg">
+            <Image
+              src={activeProject.images[activeImageIndex]}
+              width={activeProject.name === "STEADY" ? 200 : 600}
+              height={activeProject.name === "STEADY" ? 400 : 400}
+              alt={activeProject.name}
+              className={imageAnimationClass}
+            />
+          </div>
           <ul className="flex items-center flex-wrap gap-3 mt-4">
             {activeProject.techStack.map((tech, index) => (
               <li
