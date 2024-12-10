@@ -64,30 +64,48 @@ export default function Greeting() {
     <aside className="md:fixed left-0 top-0 md:h-screen max-md:mb-20 z-30 md:flex items-center justify-center xl:pl-24 lg:pl-20 md:pl-16 pl-10 max-xl:w-96 max-md:w-full">
       <div className="space-y-12">
         <div className="space-y-4">
-          {isProjectsSection ? (
-            <>
-              <h1 className="sm:text-5xl text-2xl font-bold">Projects</h1>{" "}
-              <p className="text-sm sm:text-base sm:w-[384px]">
-                {" "}
-                Here are some of the projects I've made!{" "}
-              </p>
-            </>
-          ) : (
-            <>
-              <span className="sm:space-y-5 space-y-3">Hello! My name is</span>
-              <div className="sm:space-y-5 space-y-3">
-                <h1 className="sm:text-5xl text-2xl font-bold">John Lloyd</h1>
-                <h4 className="bg-[#012496] px-2 sm:py-1 py-0.5 inline-block text-[#ffffff] font-semibold uppercase text-sm">
-                  Web Developer
-                </h4>
+          <div
+            className={`transition-all duration-1000 ease-in-out ${
+              isProjectsSection
+                ? "transform translate-y-0 opacity-100 space-y-4"
+                : "transform -translate-y-full opacity-0"
+            }`}
+          >
+            {isProjectsSection && (
+              <>
+                <h1 className="sm:text-5xl text-2xl font-bold">Projects</h1>
                 <p className="text-sm sm:text-base sm:w-[384px]">
-                  I'm an aspiring web developer with a passion for creating
-                  user-friendly and efficient web applications, born and raised
-                  in the City of Baguio, Philippines.
+                  Here are some of the projects I've made!
                 </p>
-              </div>
-            </>
-          )}
+              </>
+            )}
+          </div>
+          <div
+            className={`transition-all duration-1000 ease-in-out ${
+              !isProjectsSection
+                ? "transform translate-y-0 opacity-100"
+                : "transform translate-y-full opacity-0"
+            }`}
+          >
+            {!isProjectsSection && (
+              <>
+                <span className="sm:space-y-5 space-y-3">
+                  Hello! My name is
+                </span>
+                <div className="sm:space-y-5 space-y-3">
+                  <h1 className="sm:text-5xl text-2xl font-bold">John Lloyd</h1>
+                  <h4 className="bg-[#012496] px-2 sm:py-1 py-0.5 inline-block text-[#ffffff] font-semibold uppercase text-sm">
+                    Web Developer
+                  </h4>
+                  <p className="text-sm sm:text-base sm:w-[384px]">
+                    I'm an aspiring web developer with a passion for creating
+                    user-friendly and efficient web applications, born and
+                    raised in the City of Baguio, Philippines.
+                  </p>
+                </div>
+              </>
+            )}
+          </div>
           <ul
             className={`space-y-2 md:block ${
               isProjectsSection ? "flex justify-around" : "hidden"
@@ -122,7 +140,7 @@ export default function Greeting() {
         </div>
 
         {!isProjectsSection && (
-          <div className="space-y-7">
+          <div className="space-y-3">
             <div className=" tracking-[0.2em]">jlloydgdg@gmail.com</div>
             <div>
               <Link
