@@ -78,8 +78,8 @@ export default function ProjectsSection() {
         setTimeout(() => {
           setActiveImageIndex((prevIndex) => (prevIndex + 1) % imageCount);
           setImageAnimationClass("image-slide-in-right");
-        }, 700); // Match the duration of the CSS animation
-      }, 4000); // Adjusted interval to account for animation duration
+        }, 700); 
+      }, 4000); 
       return () => clearInterval(interval);
     } else {
       // Reset animation class and image index if there's only one image
@@ -113,7 +113,28 @@ export default function ProjectsSection() {
   return (
     <section className="space-y-14 scroll-mt-[4rem]" id="projects">
       <div className="flex justify-center items-center space-x-4">
-        <button onClick={handlePreviousProject}>&lt;</button>
+        <button
+          onClick={handlePreviousProject}
+          type="button"
+          className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-md text-sm p-2.5 text-center inline-flex items-center me-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+        >
+          <svg
+            className="w-4 h-4 transform rotate-180"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 14 10"
+          >
+            <path
+              stroke="currentColor"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M1 5h12m0 0L9 1m4 4L9 9"
+            />
+          </svg>
+          <span className="sr-only">Icon description</span>
+        </button>
         <div
           className={`flex flex-col items-center space-y-4 ${animationClass}`}
           id="projectDisplay"
@@ -169,7 +190,28 @@ export default function ProjectsSection() {
             )}
           </div>
         </div>
-        <button onClick={handleNextProject}>&gt;</button>
+        <button
+          onClick={handleNextProject}
+          type="button"
+          className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-md text-sm p-2.5 text-center inline-flex items-center me-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+        >
+          <svg
+            className="w-4 h-4"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 14 10"
+          >
+            <path
+              stroke="currentColor"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M1 5h12m0 0L9 1m4 4L9 9"
+            />
+          </svg>
+          <span className="sr-only">Icon description</span>
+        </button>
       </div>
     </section>
   );

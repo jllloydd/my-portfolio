@@ -141,7 +141,7 @@ export default function Greeting() {
 
         {!isProjectsSection && (
           <div className="space-y-3">
-            <div className=" tracking-[0.2em]">jlloydgdg@gmail.com</div>
+            <div className="tracking-[0.2em]">jlloydgdg@gmail.com</div>
             <div>
               <Link
                 href="resume/Resume(Gatudan).pdf"
