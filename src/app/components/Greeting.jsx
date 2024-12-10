@@ -94,7 +94,7 @@ export default function Greeting() {
                 </span>
                 <div className="sm:space-y-5 space-y-3">
                   <h1 className="sm:text-5xl text-2xl font-bold">John Lloyd</h1>
-                  <h4 className="bg-[#012496] px-2 sm:py-1 py-0.5 inline-block text-[#ffffff] font-semibold uppercase text-sm">
+                  <h4 className="bg-[#01efac] px-2 sm:py-1 py-0.5 inline-block text-[#000000] font-semibold uppercase text-sm">
                     Web Developer
                   </h4>
                   <p className="text-sm sm:text-base sm:w-[384px]">
@@ -115,21 +115,21 @@ export default function Greeting() {
               <li
                 key={index}
                 className={`${
-                  item.id === activeSection ? "text-[#012496] scale-110" : ""
+                  item.id === activeSection ? "text-[#01efac] scale-110" : ""
                 }`}
               >
                 <Link
                   href={`#${item.id}`}
-                  className={`flex items-center gap-3 text-[#012496] ${
-                    item.id === activeSection ? "text-[#012496]" : ""
+                  className={`flex items-center gap-3 text-[#01efac] ${
+                    item.id === activeSection ? "text-[#01efac]" : ""
                   }`}
                 >
                   <span>{item.no}</span>
                   <span
                     className={`inline-block h-0.5 w-12  ${
                       item.id === activeSection
-                        ? "bg-[#012496]"
-                        : "bg-[#012496]"
+                        ? "bg-[#01efac]"
+                        : "bg-[#01efac]"
                     }`}
                   ></span>
                   <span>{item.text}</span>
@@ -146,7 +146,7 @@ export default function Greeting() {
               <Link
                 href="resume/Resume(Gatudan).pdf"
                 target="_blank"
-                className="px-4 py-2 border-[#012496] border rounded-md md:inline-block hidden"
+                className="px-4 py-2 border-[#01efac] border rounded-md md:inline-block hidden"
               >
                 View Resume
               </Link>

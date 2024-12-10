@@ -5,6 +5,7 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --text-color: #01efac;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -16,7 +17,11 @@
 }
 
 body {
-  color: var(--foreground);
+  color: var(--text-color);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.gradient-bg {
+  background: radial-gradient(55.63% 109.49% at 100% 0%, rgba(30, 230, 86, 0.2) 0%, rgba(30, 230, 86, 0) 100%);
 }

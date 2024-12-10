@@ -20,7 +20,7 @@ export default function ProjectsSection() {
       name: "Technical Task 1",
       description:
         "A technical task that was given to me during my internship at BLINC Technologies Corporation.",
-      techStack: ["bootstrap", "html", "scss", "css", "js"],
+      techStack: ["bootstrap", "html", "css", "js"],
       images: [tt1],
       link: "https://jllloydd.github.io/BLIP-Activities/",
       github: "https://github.com/jllloydd/BLIP-Activities",
@@ -30,7 +30,7 @@ export default function ProjectsSection() {
       name: "Technical Task 2",
       description:
         "Another technical task that was given to me during my internship at BLINC Technologies Corporation.",
-      techStack: ["bootstrap", "html", "scss", "css", "js"],
+      techStack: ["bootstrap", "html", "css", "js"],
       images: [tt2],
       link: "https://jllloydd.github.io/task2/",
       github: "https://github.com/jllloydd/task2",
@@ -48,8 +48,8 @@ export default function ProjectsSection() {
       id: 4,
       name: "UCGC",
       description:
-        "A web application geared towards communication between University of the Cordilleras' students and guidance counselors. It features chat, booking,, real-time email notification, and authentication systems, aiming to digitize the counseling process.",
-      techStack: ["laravel", "tailwindcss", "js", "php", "mysql"],
+        "A web application geared towards communication between University of the Cordilleras' students and guidance counselors. It features chat, booking, real-time email notification, and authentication systems, aiming to digitize the counseling process.",
+      techStack: ["laravel", "tailwindcss", "js", "php", "mysql", "html"],
       images: [ucgc1, ucgc2, ucgc3, ucgc4],
       github: "https://github.com/jllloydd/UCGC-Laravel-10",
     },
@@ -116,7 +116,7 @@ export default function ProjectsSection() {
         <button
           onClick={handlePreviousProject}
           type="button"
-          className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-md text-sm p-2.5 text-center inline-flex items-center me-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+          className="text-greenthingy focus:ring-4 focus:outline-none font-medium rounded-md text-sm p-2.5 text-center inline-flex items-center me-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
         >
           <svg
             className="w-4 h-4 transform rotate-180"
@@ -154,7 +154,7 @@ export default function ProjectsSection() {
             {activeProject.techStack.map((tech, index) => (
               <li
                 key={index}
-                className="px-3 py-1.5 rounded-md border border-[#012496]"
+                className="px-3 py-1.5 rounded-md border border-[#01efac]"
               >
                 {tech}
               </li>
@@ -193,7 +193,7 @@ export default function ProjectsSection() {
         <button
           onClick={handleNextProject}
           type="button"
-          className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-md text-sm p-2.5 text-center inline-flex items-center me-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+          className="text-greenthingy focus:ring-4 focus:outline-none font-medium rounded-md text-sm p-2.5 text-center inline-flex items-center me-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
         >
           <svg
             className="w-4 h-4"
