@@ -179,24 +179,29 @@ export default function Greeting() {
 
         {!isProjectsSection && (
           <div className="space-y-2">
-              <ul className="flex gap-2">
-                {socials.map(
-                  (social) =>
-                    social.id !== 5 && (
-                      <li key={social.id} className="transform transition-transform duration-300 hover:scale-110">
-                        <Link href={social.link} target="_blank">
-                          <Image
-                            src={social.icon}
-                            width={32}
-                            height={32}
-                            alt={social.alt}
-                          />
-                        </Link>
-                      </li>
-                    )
-                )}
-              </ul>
-            <div className="font-bold tracking-[0.1em]">jlloydgdg@gmail.com | +639946598770</div>
+            <ul className="flex gap-2">
+              {socials.map(
+                (social) =>
+                  social.id !== 5 && (
+                    <li
+                      key={social.id}
+                      className="transform transition-transform duration-300 hover:scale-110"
+                    >
+                      <Link href={social.link} target="_blank">
+                        <Image
+                          src={social.icon}
+                          width={32}
+                          height={32}
+                          alt={social.alt}
+                        />
+                      </Link>
+                    </li>
+                  )
+              )}
+            </ul>
+            <div className="font-bold tracking-[0.1em]">
+              jlloydgdg@gmail.com | +639946598770
+            </div>
             <div>
               <Link
                 href="resume/John Lloyd De Guzman.pdf"

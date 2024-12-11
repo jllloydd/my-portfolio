@@ -49,7 +49,7 @@ export default function StarField() {
       <canvas
         ref={canvasRef}
         style={{
-          position:'relative',
+          position: "relative",
           display: "block",
           width: "100%",
           height: "100%",

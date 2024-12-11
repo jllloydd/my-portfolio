@@ -80,8 +80,8 @@ export default function ProjectsSection() {
         setTimeout(() => {
           setActiveImageIndex((prevIndex) => (prevIndex + 1) % imageCount);
           setImageAnimationClass("image-slide-in-right");
-        }, 700); 
-      }, 4000); 
+        }, 700);
+      }, 4000);
       return () => clearInterval(interval);
     } else {
       // Reset animation class and image index if there's only one image
@@ -115,10 +115,10 @@ export default function ProjectsSection() {
   return (
     <section className="space-y-14 scroll-mt-[4rem]" id="projects">
       <div className="hidden show-on-small items-center gap-2">
-      <h1 className="font-bold text-2xl space-x-2">
-        <span className="inline-block">Projects</span>
-      </h1>
-    </div>
+        <h1 className="font-bold text-2xl space-x-2">
+          <span className="inline-block">Projects</span>
+        </h1>
+      </div>
       <div className="flex justify-center items-center space-x-4">
         <button
           onClick={handlePreviousProject}
@@ -188,19 +188,11 @@ export default function ProjectsSection() {
                 target="_blank"
                 className="transform transition-transform duration-300 hover:scale-110"
               >
-                <Image
-                  src={github}
-                  width={32}
-                  height={32}
-                  alt="github icon"
-                />
+                <Image src={github} width={32} height={32} alt="github icon" />
               </Link>
             )}
             {activeProject.figma && (
-              <Link
-                href={activeProject.figma}
-                target="_blank"
-              >
+              <Link href={activeProject.figma} target="_blank">
                 Figma
               </Link>
             )}
