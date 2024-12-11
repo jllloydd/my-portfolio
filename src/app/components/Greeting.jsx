@@ -2,7 +2,11 @@
 
 import Link from "next/link";
 import React, { useMemo, useState, useEffect } from "react";
-
+import github from "../../../public/icons/github.svg";
+import facebook from "../../../public/icons/facebook.svg";
+import linkedin from "../../../public/icons/linkedin.svg";
+import instagram from "../../../public/icons/instagram.svg";
+import Image from "next/image";
 export default function Greeting() {
   const navItems = useMemo(
     () => [
@@ -12,6 +16,33 @@ export default function Greeting() {
     ],
     []
   );
+
+  const socials = [
+    {
+      id: 1,
+      icon: github,
+      alt: "github icon",
+      link: "https://https://github.com/jllloydd",
+    },
+    {
+      id: 2,
+      icon: facebook,
+      alt: "facebook icon",
+      link: "https://www.facebook.com/jlloydd",
+    },
+    {
+      id: 3,
+      icon: instagram,
+      alt: "instagram icon",
+      link: "https://www.instagram.com/janllong/",
+    },
+    {
+      id: 4,
+      icon: linkedin,
+      alt: "linkedin icon",
+      link: "https://www.linkedin.com/in/john-lloyd-de-guzman-312300306/",
+    },
+  ];
 
   const [activeSection, setActiveSection] = useState(null);
   const [isProjectsSection, setIsProjectsSection] = useState(false);
@@ -63,7 +94,7 @@ export default function Greeting() {
   const handleNavItemClick = (id) => {
     const sectionElement = document.getElementById(id);
     if (sectionElement) {
-      sectionElement.scrollIntoView({ behavior: 'smooth' });
+      sectionElement.scrollIntoView({ behavior: "smooth" });
     }
   };
 
@@ -147,13 +178,30 @@ export default function Greeting() {
         </div>
 
         {!isProjectsSection && (
-          <div className="space-y-3">
-            <div className="tracking-[0.2em]">jlloydgdg@gmail.com</div>
+          <div className="space-y-2">
+              <ul className="flex gap-2">
+                {socials.map(
+                  (social) =>
+                    social.id !== 5 && (
+                      <li key={social.id} className="transform transition-transform duration-300 hover:scale-110">
+                        <Link href={social.link} target="_blank">
+                          <Image
+                            src={social.icon}
+                            width={32}
+                            height={32}
+                            alt={social.alt}
+                          />
+                        </Link>
+                      </li>
+                    )
+                )}
+              </ul>
+            <div className="font-bold tracking-[0.1em]">jlloydgdg@gmail.com</div>
             <div>
               <Link
-                href="resume/Resume(Gatudan).pdf"
+                href="resume/John Lloyd De Guzman.pdf"
                 target="_blank"
-                className="px-4 py-2 border-[#01efac] border rounded-md md:inline-block hidden"
+                className="px-4 py-2 font-bold border-[#01efac] border rounded-md md:inline-block hidden hover:bg-[#01efac] hover:text-[#000000]"
               >
                 View Resume
               </Link>

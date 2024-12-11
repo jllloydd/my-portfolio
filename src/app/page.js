@@ -6,6 +6,7 @@ import ExperienceSection from "./components/ExperienceSection.jsx";
 import ProjectsSection from "./components/ProjectsSection.jsx";
 import AuroraHero from "./components/AuroraHero.jsx";
 import StarField from "./components/StarField.jsx";
+import MobileSocials from "./components/MobileSocials.jsx";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
         <ProjectsSection />
       </div>
       <AuroraHero />
+      <MobileSocials />
     </main>
   );
 }

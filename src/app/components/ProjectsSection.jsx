@@ -12,6 +12,8 @@ import ucgc3 from "../../../public/projectscreenshots/ucgc3.png";
 import ucgc4 from "../../../public/projectscreenshots/ucgc4.png";
 import peng from "../../../public/projectscreenshots/peng.png";
 import React, { useState, useEffect } from "react";
+import github from "../../../public/icons/github.svg";
+import projectlink from "../../../public/icons/projectlink.svg";
 
 export default function ProjectsSection() {
   const projects = [
@@ -112,11 +114,16 @@ export default function ProjectsSection() {
 
   return (
     <section className="space-y-14 scroll-mt-[4rem]" id="projects">
+      <div className="hidden show-on-small items-center gap-2">
+      <h1 className="font-bold text-2xl space-x-2">
+        <span className="inline-block">Projects</span>
+      </h1>
+    </div>
       <div className="flex justify-center items-center space-x-4">
         <button
           onClick={handlePreviousProject}
           type="button"
-          className="text-greenthingy focus:outline-none font-medium rounded-md text-sm p-2.5 text-center inline-flex items-center me-2"
+          className="text-greenthingy focus:outline-none font-medium rounded-md text-sm p-2.5 text-center inline-flex items-center me-2 transform transition-transform duration-300 hover:scale-110"
         >
           <svg
             className="w-4 h-4 transform rotate-180"
@@ -165,25 +172,34 @@ export default function ProjectsSection() {
               <Link
                 href={activeProject.link}
                 target="_blank"
-                className="text-blue-500"
+                className="transform transition-transform duration-300 hover:scale-110"
               >
-                Live Demo
+                <Image
+                  src={projectlink}
+                  width={32}
+                  height={32}
+                  alt="live demo link"
+                />
               </Link>
             )}
             {activeProject.github && (
               <Link
                 href={activeProject.github}
                 target="_blank"
-                className="text-blue-500"
+                className="transform transition-transform duration-300 hover:scale-110"
               >
-                GitHub
+                <Image
+                  src={github}
+                  width={32}
+                  height={32}
+                  alt="github icon"
+                />
               </Link>
             )}
             {activeProject.figma && (
               <Link
                 href={activeProject.figma}
                 target="_blank"
-                className="text-blue-500"
               >
                 Figma
               </Link>
@@ -193,7 +209,7 @@ export default function ProjectsSection() {
         <button
           onClick={handleNextProject}
           type="button"
-          className="text-greenthingy focus:outline-none font-medium rounded-md text-sm p-2.5 text-center inline-flex items-center me-2"
+          className="text-greenthingy focus:outline-none font-medium rounded-md text-sm p-2.5 text-center inline-flex items-center me-2 transform transition-transform duration-300 hover:scale-110"
         >
           <svg
             className="w-4 h-4"

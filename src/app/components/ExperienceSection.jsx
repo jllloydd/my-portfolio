@@ -15,7 +15,7 @@ export default function ExperienceSection() {
 
   return (
     <section className="scroll-mt-[4rem] space-y-14" id="experience">
-      <SectionHeader title="Experience" />
+      <SectionHeader title="Experience"/>
       <div className="space-y-12">
         <div className="space-y-4">
           <h3>
