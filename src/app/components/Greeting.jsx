@@ -22,7 +22,7 @@ export default function Greeting() {
       id: 1,
       icon: github,
       alt: "github icon",
-      link: "https://https://github.com/jllloydd",
+      link: "https://github.com/jllloydd",
     },
     {
       id: 2,
@@ -132,7 +132,7 @@ export default function Greeting() {
                 </span>
                 <div className="sm:space-y-5 space-y-3">
                   <h1 className="sm:text-5xl text-2xl font-bold">John Lloyd</h1>
-                  <h4 className="bg-[#01efac] px-2 sm:py-1 py-0.5 inline-block text-[#000000] font-semibold uppercase text-sm">
+                  <h4 className="bg-[#01efac] px-2 sm:py-1 py-0.5 inline-block text-[#000000] font-bold uppercase text-sm">
                     Web Developer
                   </h4>
                   <p className="text-sm sm:text-base sm:w-[384px]">
@@ -196,7 +196,7 @@ export default function Greeting() {
                     )
                 )}
               </ul>
-            <div className="font-bold tracking-[0.1em]">jlloydgdg@gmail.com</div>
+            <div className="font-bold tracking-[0.1em]">jlloydgdg@gmail.com | +639946598770</div>
             <div>
               <Link
                 href="resume/John Lloyd De Guzman.pdf"

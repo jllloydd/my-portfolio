@@ -12,6 +12,9 @@ module.exports = {
         foreground: "var(--foreground)",
         greenthingy: "var(--text-color)",
       },
+      fontFamily: {
+        'galano': ['var(--font-galano-regular)', 'sans-serif'],
+      },
     },
   },
   plugins: [],
