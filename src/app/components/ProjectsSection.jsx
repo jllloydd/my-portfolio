@@ -10,6 +10,7 @@ import ucgc1 from "../../../public/projectscreenshots/ucgc1.PNG";
 import ucgc2 from "../../../public/projectscreenshots/ucgc2.PNG";
 import ucgc3 from "../../../public/projectscreenshots/ucgc3.PNG";
 import ucgc4 from "../../../public/projectscreenshots/ucgc4.PNG";
+import portfolio from "../../../public/projectscreenshots/portfolio.PNG";
 import peng from "../../../public/projectscreenshots/peng.PNG";
 import React, { useState, useEffect } from "react";
 import github from "../../../public/icons/github.svg";
@@ -17,6 +18,16 @@ import projectlink from "../../../public/icons/projectlink.svg";
 
 export default function ProjectsSection() {
   const projects = [
+    {
+      id: 0,
+      name: "Portfolio",
+      description:
+        "My personal portfolio website, created using Next.js, Tailwind CSS, and React.js.",
+      techStack: ["react.js", "html", "tailwindcss", "react.js"],
+      images: [portfolio],
+      link: "https://my-portfolio-nfoh-jllloydds-projects.vercel.app/",
+      github: "https://github.com/jllloydd/my-portfolio",
+    },
     {
       id: 1,
       name: "Technical Task 1",
