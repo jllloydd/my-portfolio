@@ -19,7 +19,7 @@ import projectlink from "../../../public/icons/projectlink.svg";
 export default function ProjectsSection() {
   const projects = [
     {
-      id: 0,
+      id: 1,
       name: "Portfolio",
       description:
         "My personal portfolio website, created using Next.js, Tailwind CSS, and React.js.",
@@ -29,7 +29,7 @@ export default function ProjectsSection() {
       github: "https://github.com/jllloydd/my-portfolio",
     },
     {
-      id: 1,
+      id: 2,
       name: "Technical Task 1",
       description:
         "A technical task that was given to me during my internship at BLINC Technologies Corporation.",
@@ -39,7 +39,7 @@ export default function ProjectsSection() {
       github: "https://github.com/jllloydd/BLIP-Activities",
     },
     {
-      id: 2,
+      id: 3,
       name: "Technical Task 2",
       description:
         "Another technical task that was given to me during my internship at BLINC Technologies Corporation.",
@@ -49,7 +49,7 @@ export default function ProjectsSection() {
       github: "https://github.com/jllloydd/task2",
     },
     {
-      id: 3,
+      id: 4,
       name: "STEADY",
       description:
         "An android application featuring map navigation, news integration, and statistics for landslides and earthquakes around Baguio City.",
@@ -58,7 +58,7 @@ export default function ProjectsSection() {
       github: "https://github.com/jllloydd/STEADY",
     },
     {
-      id: 4,
+      id: 5,
       name: "UCGC",
       description:
         "A web application geared towards communication between University of the Cordilleras' students and guidance counselors. It features chat, booking, real-time email notification, and authentication systems, aiming to digitize the counseling process.",
@@ -67,7 +67,7 @@ export default function ProjectsSection() {
       github: "https://github.com/jllloydd/UCGC-Laravel-10",
     },
     {
-      id: 5,
+      id: 6,
       name: "Penguin Animation",
       description:
         "A simple animation of a penguin using HTML, CSS, and JavaScript, made as an activity for my Web Development class.",
