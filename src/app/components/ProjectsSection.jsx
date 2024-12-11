@@ -25,7 +25,7 @@ export default function ProjectsSection() {
         "My personal portfolio website, created using Next.js, Tailwind CSS, and React.js.",
       techStack: ["react.js", "html", "tailwindcss", "react.js"],
       images: [portfolio],
-      link: "https://my-portfolio-rho-five-30.vercel.app/",
+      link: "https://jlloydgdg.vercel.app/",
       github: "https://github.com/jllloydd/my-portfolio",
     },
     {
