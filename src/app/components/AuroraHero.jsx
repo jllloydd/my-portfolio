@@ -29,9 +29,8 @@ export default function AuroraHero() {
     const handleScroll = () => {
       const scrollY = window.scrollY;
       const windowHeight = window.innerHeight;
-      const documentHeight = document.documentElement.scrollHeight;
-      const maxScroll = documentHeight - windowHeight;
-      const progress = Math.min(scrollY / maxScroll, 1);
+      // Fade out within one screen height
+      const progress = Math.min(scrollY / windowHeight, 1);
       setScrollProgress(progress);
     };
 
