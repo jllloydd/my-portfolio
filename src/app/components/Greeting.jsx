@@ -138,7 +138,7 @@ export default function Greeting() {
                   <p className="text-sm sm:text-base sm:w-[384px]">
                     I'm an aspiring web developer with a passion for creating
                     user-friendly and efficient web applications, born and
-                    raised in the City of Baguio, Philippines.
+                    raised in the City of Baguio, Philippines. Currently living in Marikina City.
                   </p>
                 </div>
               </>
