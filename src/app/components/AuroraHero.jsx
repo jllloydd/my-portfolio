@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import {
   useMotionTemplate,
   useMotionValue,
@@ -14,6 +14,7 @@ const COLORS_TOP = ["#332449", "#8d4f9a", "#30658e", "#bf73d6", "#923979"];
 
 export default function AuroraHero() {
   const color = useMotionValue(COLORS_TOP[0]);
+  const [scrollProgress, setScrollProgress] = useState(0);
 
   useEffect(() => {
     animate(color, COLORS_TOP, {
@@ -24,14 +25,35 @@ export default function AuroraHero() {
     });
   }, []);
 
-  const backgroundImage = useMotionTemplate`radial-gradient(125% 125% at 30% 75%, #020617 57%, ${color} 75%, transparent 100%)`;
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      const windowHeight = window.innerHeight;
+      const documentHeight = document.documentElement.scrollHeight;
+      const maxScroll = documentHeight - windowHeight;
+      const progress = Math.min(scrollY / maxScroll, 1);
+      setScrollProgress(progress);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const backgroundImage = useMotionTemplate`radial-gradient(125% 125% at 30% 75%, transparent 57%, ${color} 75%, transparent 100%)`;
 
   return (
-    <motion.div
-      style={{
-        backgroundImage,
-      }}
-      className="fixed inset-0 -z-10"
-    />
+    <>
+      {/* Main background */}
+      <div className="fixed inset-0 -z-20 bg-[#020617]" />
+      
+      {/* Aurora animation */}
+      <motion.div
+        style={{
+          backgroundImage,
+          opacity: 1 - scrollProgress,
+        }}
+        className="fixed inset-0 -z-10"
+      />
+    </>
   );
 }

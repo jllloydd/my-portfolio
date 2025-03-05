@@ -204,7 +204,7 @@ export default function Greeting() {
             </div>
             <div>
               <Link
-                href="resume/John Lloyd De Guzman.pdf"
+                href="resume/Resume (De Guzman).pdf"
                 target="_blank"
                 className="px-4 py-2 font-bold border-[#01efac] border rounded-md md:inline-block hidden hover:bg-[#01efac] hover:text-[#000000]"
               >

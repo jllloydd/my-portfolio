@@ -78,51 +78,6 @@ export default function ProjectsSection() {
     },
   ];
 
-  const [activeProjectIndex, setActiveProjectIndex] = useState(0);
-  const [activeImageIndex, setActiveImageIndex] = useState(0);
-  const [animationClass, setAnimationClass] = useState("");
-  const [imageAnimationClass, setImageAnimationClass] = useState("");
-
-  useEffect(() => {
-    const imageCount = projects[activeProjectIndex].images.length;
-    if (imageCount > 1) {
-      const interval = setInterval(() => {
-        setImageAnimationClass("image-slide-out-left");
-        setTimeout(() => {
-          setActiveImageIndex((prevIndex) => (prevIndex + 1) % imageCount);
-          setImageAnimationClass("image-slide-in-right");
-        }, 700);
-      }, 4000);
-      return () => clearInterval(interval);
-    } else {
-      // Reset animation class and image index if there's only one image
-      setImageAnimationClass("");
-      setActiveImageIndex(0);
-    }
-  }, [activeProjectIndex, activeImageIndex]);
-
-  const handleNextProject = () => {
-    setAnimationClass("slide-out-left");
-    setTimeout(() => {
-      setActiveProjectIndex((prevIndex) => (prevIndex + 1) % projects.length);
-      setActiveImageIndex(0); // Reset image index for new project
-      setAnimationClass("slide-in-right");
-    }, 300);
-  };
-
-  const handlePreviousProject = () => {
-    setAnimationClass("slide-out-right");
-    setTimeout(() => {
-      setActiveProjectIndex((prevIndex) =>
-        prevIndex === 0 ? projects.length - 1 : prevIndex - 1
-      );
-      setActiveImageIndex(0); // Reset image index for new project
-      setAnimationClass("slide-in-left");
-    }, 300);
-  };
-
-  const activeProject = projects[activeProjectIndex];
-
   return (
     <section className="space-y-14 scroll-mt-[4rem]" id="projects">
       <div className="hidden show-on-small items-center gap-2">
@@ -130,107 +85,68 @@ export default function ProjectsSection() {
           <span className="inline-block">Projects</span>
         </h1>
       </div>
-      <div className="flex justify-center items-center space-x-4">
-        <button
-          onClick={handlePreviousProject}
-          type="button"
-          className="text-greenthingy focus:outline-none font-medium rounded-md text-sm p-2.5 text-center inline-flex items-center me-2 transform transition-transform duration-300 hover:scale-110"
-        >
-          <svg
-            className="w-4 h-4 transform rotate-180"
-            aria-hidden="true"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 14 10"
-          >
-            <path
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="M1 5h12m0 0L9 1m4 4L9 9"
-            />
-          </svg>
-          <span className="sr-only">Icon description</span>
-        </button>
-        <div
-          className={`flex flex-col items-center space-y-4 ${animationClass}`}
-          id="projectDisplay"
-        >
-          <h3 className="text-2xl font-bold">{activeProject.name}</h3>
-          <p className="text-lg text-justify">{activeProject.description}</p>
-          <div className="rounded-lg">
-            <Image
-              src={activeProject.images[activeImageIndex]}
-              width={activeProject.name === "STEADY" ? 200 : 600}
-              height={activeProject.name === "STEADY" ? 400 : 400}
-              alt={activeProject.name}
-              className={imageAnimationClass}
-            />
+      <div className="flex flex-col space-y-20">
+        {projects.map((project) => (
+          <div key={project.id} className="flex flex-col items-center space-y-4">
+            <h3 className="text-2xl font-bold">{project.name}</h3>
+            <p className="text-lg text-justify">{project.description}</p>
+            <div className={`grid gap-4 ${
+              project.id === 5 ? 'grid-cols-1 md:grid-cols-2' : 
+              project.images.length === 1 ? 'w-full' : 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3'
+            }`}>
+              {project.images.map((image, index) => (
+                <div key={index} className={`rounded-lg ${
+                  project.images.length === 1 ? 'w-full' : ''
+                }`}>
+                  <Image
+                    src={image}
+                    width={project.name === "STEADY" ? 200 : 
+                          (project.id === 5 ? 600 : 
+                          (project.images.length === 1 ? 1200 : 600))}
+                    height={project.name === "STEADY" ? 400 : 400}
+                    alt={`${project.name} screenshot ${index + 1}`}
+                    className={project.images.length === 1 ? 'w-full' : ''}
+                  />
+                </div>
+              ))}
+            </div>
+            <ul className="flex items-center flex-wrap gap-3 mt-4">
+              {project.techStack.map((tech, index) => (
+                <li
+                  key={index}
+                  className="px-3 py-1.5 rounded-md border border-[#01efac]"
+                >
+                  {tech}
+                </li>
+              ))}
+            </ul>
+            <div className="flex gap-2 mt-4">
+              {project.link && (
+                <Link
+                  href={project.link}
+                  target="_blank"
+                  className="transform transition-transform duration-300 hover:scale-110"
+                >
+                  <Image
+                    src={projectlink}
+                    width={32}
+                    height={32}
+                    alt="live demo link"
+                  />
+                </Link>
+              )}
+              {project.github && (
+                <Link
+                  href={project.github}
+                  target="_blank"
+                  className="transform transition-transform duration-300 hover:scale-110"
+                >
+                  <Image src={github} width={32} height={32} alt="github icon" />
+                </Link>
+              )}
+            </div>
           </div>
-          <ul className="flex items-center flex-wrap gap-3 mt-4">
-            {activeProject.techStack.map((tech, index) => (
-              <li
-                key={index}
-                className="px-3 py-1.5 rounded-md border border-[#01efac]"
-              >
-                {tech}
-              </li>
-            ))}
-          </ul>
-          <div className="flex gap-2 mt-4">
-            {activeProject.link && (
-              <Link
-                href={activeProject.link}
-                target="_blank"
-                className="transform transition-transform duration-300 hover:scale-110"
-              >
-                <Image
-                  src={projectlink}
-                  width={32}
-                  height={32}
-                  alt="live demo link"
-                />
-              </Link>
-            )}
-            {activeProject.github && (
-              <Link
-                href={activeProject.github}
-                target="_blank"
-                className="transform transition-transform duration-300 hover:scale-110"
-              >
-                <Image src={github} width={32} height={32} alt="github icon" />
-              </Link>
-            )}
-            {activeProject.figma && (
-              <Link href={activeProject.figma} target="_blank">
-                Figma
-              </Link>
-            )}
-          </div>
-        </div>
-        <button
-          onClick={handleNextProject}
-          type="button"
-          className="text-greenthingy focus:outline-none font-medium rounded-md text-sm p-2.5 text-center inline-flex items-center me-2 transform transition-transform duration-300 hover:scale-110"
-        >
-          <svg
-            className="w-4 h-4"
-            aria-hidden="true"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 14 10"
-          >
-            <path
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="M1 5h12m0 0L9 1m4 4L9 9"
-            />
-          </svg>
-          <span className="sr-only">Icon description</span>
-        </button>
+        ))}
       </div>
     </section>
   );
