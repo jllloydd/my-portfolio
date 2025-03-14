@@ -12,6 +12,10 @@ import ucgc3 from "../../../public/projectscreenshots/ucgc3.PNG";
 import ucgc4 from "../../../public/projectscreenshots/ucgc4.PNG";
 import portfolio from "../../../public/projectscreenshots/portfolio.PNG";
 import peng from "../../../public/projectscreenshots/peng.PNG";
+import blog0 from "../../../public/projectscreenshots/blog1.PNG";
+import blog1 from "../../../public/projectscreenshots/blog1.PNG";
+import blog2 from "../../../public/projectscreenshots/blog2.PNG";
+import blog3 from "../../../public/projectscreenshots/blog3.PNG";
 import React, { useState, useEffect } from "react";
 import github from "../../../public/icons/github.svg";
 import projectlink from "../../../public/icons/projectlink.svg";
@@ -30,6 +34,34 @@ export default function ProjectsSection() {
     },
     {
       id: 2,
+      name: "STEADY",
+      description:
+        "An android application featuring map navigation, news integration, and statistics for landslides and earthquakes around Baguio City.",
+      techStack: ["xml", "kotlin", "java"],
+      images: [steady1, steady2, steady3],
+      github: "https://github.com/jllloydd/STEADY",
+    },
+    {
+      id: 3,
+      name: "UCGC",
+      description:
+        "A web application geared towards communication between University of the Cordilleras' students and guidance counselors. It features chat, booking, real-time email notification, and authentication systems, aiming to digitize the counseling process.",
+      techStack: ["laravel", "tailwindcss", "js", "php", "mysql", "html"],
+      images: [ucgc1, ucgc2, ucgc3, ucgc4],
+      github: "https://github.com/jllloydd/UCGC-Laravel-10",
+    },
+    {
+      id: 4,
+      name: "Forum",
+      description:
+        "A simple forum website, made as a study on Svelte and Supabase backend integration.",
+      techStack: ["html", "css", "js", "svelte", "supabase"],
+      images: [blog0, blog1, blog2, blog3],
+      link: "https://jllloydd.github.io/svelte-blog/",
+      github: "https://github.com/jllloydd/svelte-blog",
+    },
+    {
+      id: 5,
       name: "Technical Task 1",
       description:
         "A technical task that was given to me during my internship at BLINC Technologies Corporation.",
@@ -39,7 +71,7 @@ export default function ProjectsSection() {
       github: "https://github.com/jllloydd/BLIP-Activities",
     },
     {
-      id: 3,
+      id: 6,
       name: "Technical Task 2",
       description:
         "Another technical task that was given to me during my internship at BLINC Technologies Corporation.",
@@ -49,25 +81,7 @@ export default function ProjectsSection() {
       github: "https://github.com/jllloydd/task2",
     },
     {
-      id: 4,
-      name: "STEADY",
-      description:
-        "An android application featuring map navigation, news integration, and statistics for landslides and earthquakes around Baguio City.",
-      techStack: ["xml", "kotlin", "java"],
-      images: [steady1, steady2, steady3],
-      github: "https://github.com/jllloydd/STEADY",
-    },
-    {
-      id: 5,
-      name: "UCGC",
-      description:
-        "A web application geared towards communication between University of the Cordilleras' students and guidance counselors. It features chat, booking, real-time email notification, and authentication systems, aiming to digitize the counseling process.",
-      techStack: ["laravel", "tailwindcss", "js", "php", "mysql", "html"],
-      images: [ucgc1, ucgc2, ucgc3, ucgc4],
-      github: "https://github.com/jllloydd/UCGC-Laravel-10",
-    },
-    {
-      id: 6,
+      id: 7,
       name: "Penguin Animation",
       description:
         "A simple animation of a penguin using HTML, CSS, and JavaScript, made as an activity for my Web Development class.",
@@ -91,8 +105,9 @@ export default function ProjectsSection() {
             <h3 className="text-2xl font-bold">{project.name}</h3>
             <p className="text-lg text-justify">{project.description}</p>
             <div className={`grid gap-4 ${
-              project.id === 5 ? 'grid-cols-1 md:grid-cols-2' : 
-              project.images.length === 1 ? 'w-full' : 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3'
+              project.images.length === 1 ? 'w-full' : 
+              project.images.length === 2 || project.images.length === 4 ? 'grid-cols-1 md:grid-cols-2' : 
+              'grid-cols-1 md:grid-cols-2 lg:grid-cols-3'
             }`}>
               {project.images.map((image, index) => (
                 <div key={index} className={`rounded-lg ${
@@ -105,7 +120,7 @@ export default function ProjectsSection() {
                           (project.images.length === 1 ? 1200 : 600))}
                     height={project.name === "STEADY" ? 400 : 400}
                     alt={`${project.name} screenshot ${index + 1}`}
-                    className={project.images.length === 1 ? 'w-full' : ''}
+                    className={`rounded-lg ${project.images.length === 1 ? 'w-full' : ''}`}
                   />
                 </div>
               ))}
