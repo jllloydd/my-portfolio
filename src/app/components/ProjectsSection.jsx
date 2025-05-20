@@ -3,6 +3,10 @@ import Link from "next/link";
 import Image from "next/image";
 import tt1 from "../../../public/projectscreenshots/tt1.PNG";
 import tt2 from "../../../public/projectscreenshots/tt2.PNG";
+import lp1 from "../../../public/projectscreenshots/lp1.PNG";
+import lp2 from "../../../public/projectscreenshots/lp2.PNG";
+import lp3 from "../../../public/projectscreenshots/lp3.PNG";
+import lp4 from "../../../public/projectscreenshots/lp4.PNG";
 import steady1 from "../../../public/projectscreenshots/steady1.jpg";
 import steady2 from "../../../public/projectscreenshots/steady2.jpg";
 import steady3 from "../../../public/projectscreenshots/steady3.jpg";
@@ -11,7 +15,6 @@ import ucgc2 from "../../../public/projectscreenshots/ucgc2.PNG";
 import ucgc3 from "../../../public/projectscreenshots/ucgc3.PNG";
 import ucgc4 from "../../../public/projectscreenshots/ucgc4.PNG";
 import portfolio from "../../../public/projectscreenshots/portfolio.PNG";
-import peng from "../../../public/projectscreenshots/peng.PNG";
 import blog0 from "../../../public/projectscreenshots/blog1.PNG";
 import blog1 from "../../../public/projectscreenshots/blog1.PNG";
 import blog2 from "../../../public/projectscreenshots/blog2.PNG";
@@ -82,13 +85,13 @@ export default function ProjectsSection() {
     },
     {
       id: 7,
-      name: "Penguin Animation",
+      name: "Real Estate Landing Page",
       description:
-        "A simple animation of a penguin using HTML, CSS, and JavaScript, made as an activity for my Web Development class.",
-      techStack: ["html", "css", "js"],
-      images: [peng],
-      link: "https://jllloydd.github.io/penguin/",
-      github: "https://github.com/jllloydd/penguin",
+        "A simple rework of a landing page for a real estate company, made with React.js, Tailwind CSS.",
+      techStack: ["html", "css", "js" ,"react.js", "tailwindcss"],
+      images: [lp1, lp2, lp3, lp4],
+      link: "https://jllloydd.github.io/lp-test/",
+      github: "https://github.com/jllloydd/lp-test",
     },
   ];
 
