@@ -90,8 +90,8 @@ export default function ProjectsSection() {
         "A simple rework of a landing page for a real estate company, made with React.js, Tailwind CSS.",
       techStack: ["html", "css", "js" ,"react.js", "tailwindcss"],
       images: [lp1, lp2, lp3, lp4],
-      link: "https://jllloydd.github.io/lp-test/",
-      github: "https://github.com/jllloydd/lp-test",
+      link: "https://jllloydd.github.io/lp-deploy/",
+      github: "https://github.com/jllloydd/lp-deploy",
     },
   ];
 
