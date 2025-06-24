@@ -14,7 +14,6 @@ export default function Home() {
       <Greeting />
       <div className="space-y-32 xl:w-[calc(100vw-700px)] relative z-20 lg:w-[calc(100vw-600px)] md:w-[calc(100vw-500px)] ml-auto">
         <StarField />
-        <AboutSection />
         <ExperienceSection />
         <ProjectsSection />
       </div>
