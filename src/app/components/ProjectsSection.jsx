@@ -108,7 +108,7 @@ export default function ProjectsSection() {
             <h3 className="text-2xl font-bold">{project.name}</h3>
             <p className="text-lg text-justify">{project.description}</p>
             <div className={`grid gap-4 ${
-              project.images.length === 1 ? 'w-4/5' : 
+              project.images.length === 1 ? 'w-2/3' : 
               project.images.length === 2 || project.images.length === 4 ? 'grid-cols-1 md:grid-cols-2' : 
               'grid-cols-1 md:grid-cols-2 lg:grid-cols-3'
             }`}>
