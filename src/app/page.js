@@ -7,6 +7,7 @@ import ProjectsSection from "./components/ProjectsSection.jsx";
 import AuroraHero from "./components/AuroraHero.jsx";
 import StarField from "./components/StarField.jsx";
 import MobileSocials from "./components/MobileSocials.jsx";
+import { Analytics } from "@vercel/analytics/next"
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
       </div>
       <AuroraHero />
       <MobileSocials />
+      <Analytics />
     </main>
   );
 }
